@@ -27,12 +27,16 @@ def operacion(comandos):
         expresiones = re.findall('\d+', comandos)
         print(expresiones)
     
-    expresion = []
+    answer = ''
 
     if suma.search(comandos):
         expresion = re.findall('\d+', comandos)
-        result = int(expresion[0]) + int(expresion[1])
+        for i in range(0, len(expresion)):
+            result = int(expresion[-i]) + int(expresion[-i+1])
+        #replace pattern f result in comandos
+        answer += re.sub(suma, str(result), comandos)
         print(result)
+        
     if rest.search(comandos):
         expresion = re.findall('\d+', comandos)
         result = int(expresion[0]) - int(expresion[1])
@@ -78,8 +82,8 @@ def operacion(comandos):
         result = math.factorial(int(expresion[0]))
         print(result)
         
-    
-    return expresion
+    print(type(answer), "Answer is:", answer)
+    return answer
 
 #3. El detector de errores
 # Numeros negativos, floats/racionales
