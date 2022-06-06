@@ -29,32 +29,32 @@ def operacion(comandos):
     newString = ''
 
     if suma.search(comandos):
-        result = int(expresion[-1]) + int(expresion[-2])
+        result = int(expresion[-2]) + int(expresion[-1])
         newString += re.sub(suma, str(result), comandos, 1)
         print(newString)
         operacion(newString)
     if rest.search(comandos):
-        result = int(expresion[-1]) - int(expresion[-2])
+        result = int(expresion[-2]) - int(expresion[-1])
         newString += re.sub(rest, str(result), comandos, 1)
         print(newString)
         operacion(newString)
     if mult.search(comandos):
-        result = int(expresion[-1]) * int(expresion[-2])
+        result = int(expresion[-2]) * int(expresion[-1])
         newString += re.sub(mult, str(result), comandos, 1)
         print(newString)
         operacion(newString)
     if divs.search(comandos):
-        result = int(expresion[-1]) / int(expresion[-2])
+        result = int(expresion[-2]) / int(expresion[-1])
         newString += re.sub(divs, str(result), comandos, 1)
         print(newString)
         operacion(newString)
     if cociente.search(comandos):
-        result = int(expresion[-1]) // int(expresion[-2])
+        result = int(expresion[-2]) // int(expresion[-1])
         newString += re.sub(cociente, str(result), comandos, 1)
         print(newString)
         operacion(newString)
     if residuo.search(comandos):
-        result = int(expresion[-1]) % int(expresion[-2])
+        result = int(expresion[-2]) % int(expresion[-1])
         newString += re.sub(residuo, str(result), comandos, 1)
         print(newString)
         operacion(newString)
