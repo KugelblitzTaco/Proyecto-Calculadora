@@ -63,6 +63,31 @@ def operacion(comandos):
         newString += re.sub(raiz, str(result), comandos, 1)
         print(newString)
         operacion(newString)
+    if cuad.search(comandos):
+        result = math.pow(int(expresion[-1]), 2)
+        newString += re.sub(cuad, str(result), comandos, 1)
+        print(newString)
+        operacion(newString)
+    if seno.search(comandos):
+        result = math.sin(math.radians(int(expresion[-1])))
+        newString += re.sub(seno, str(result), comandos, 1)
+        print(newString)
+        operacion(newString)
+    if coseno.search(comandos):
+        result = math.cos(math.radians(int(expresion[-1])))
+        newString += re.sub(coseno, str(result), comandos, 1)
+        print(newString)
+        operacion(newString)
+    if tangente.search(comandos):
+        result = math.tan(math.radians(int(expresion[-1])))
+        newString += re.sub(tangente, str(result), comandos, 1)
+        print(newString)
+        operacion(newString)
+    if factorial.search(comandos):
+        result = math.factorial(int(expresion[-1]))
+        newString += re.sub(factorial, str(result), comandos, 1)
+        print(newString)
+        operacion(newString)
     
 
     print(expresion)
